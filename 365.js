@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  
   console.log("DOM fully loaded and parsed");
 
   const svgImagesByColor = {
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629582bd2c68e1098c7a909_c1-10.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629582c4fda3caf12eed466_c1-11.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629582c583d39cf7d066d04_c1-12.svg",
-      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629582bc1c2a26e15c41f65_c1-13.svg"
+      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629582bc1c2a26e15c41f65_c1-13.svg",
     ],
     c2: [
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/662958225815855ba70d16de_c2-1.svg",
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629582c6fc0ce024c0deb12_c2-10.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629582824f7e8040a025c09_c2-11.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/66295828f528d79e5157b6e6_c2-12.svg",
-      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629582b4ba58ccdee3fef47_c2-13.svg"
+      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629582b4ba58ccdee3fef47_c2-13.svg",
     ],
     c3: [
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/66295822d5bdac229cc59b21_c3-1.svg",
@@ -46,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/66295824c1c2a26e15c41bc0_c3-10.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/66295823e9e3744b2b71b706_c3-11.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/66295823067f07a80937147f_c3-12.svg",
-      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/66295823c5df9507d4369ed0_c3-13.svg"
+      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/66295823c5df9507d4369ed0_c3-13.svg",
     ],
     c4: [
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581cfac50229e26ab655_c4-1.svg",
@@ -61,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581e2cb2f0fa8103924a_c4-10.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581fa9b843fd077d4ebb_c4-11.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581f602404b72f7e1670_c4-12.svg",
-      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581fbaf2aa858a7b8ebe_c4-13.svg"
+      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581fbaf2aa858a7b8ebe_c4-13.svg",
     ],
     c5: [
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/66295818c5df9507d4369744_c5-1.svg",
@@ -77,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581a5815855ba70d0fb8_c5-11.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581cc098d4d5c6a773b6_c5-12.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581cd44724113bdc04eb_c5-13.svg",
-      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581cbec26402daeab1c7_c5-14.svg"
+      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581cbec26402daeab1c7_c5-14.svg",
     ],
     c6: [
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/66295818c5df9507d4369744_c5-1.svg",
@@ -93,79 +92,153 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581a5815855ba70d0fb8_c5-11.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581cc098d4d5c6a773b6_c5-12.svg",
       "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581cd44724113bdc04eb_c5-13.svg",
-      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581cbec26402daeab1c7_c5-14.svg"
-    ]
+      "https://uploads-ssl.webflow.com/64356a21efff2ba4f4579384/6629581cbec26402daeab1c7_c5-14.svg",
+    ],
   };
-  
+
   const gridContainer = document.querySelector(".grid-pattern");
   const rowInput = document.getElementById("row-input");
   const colInput = document.getElementById("col-input");
-  const regenerateButton = document.querySelector(".regenerate");
-  const colorElements = document.querySelectorAll('.color');
+  const regenerateButton = document.querySelector(".regener");
+  const colorElements = document.querySelectorAll(".color");
 
-  function generateGrid(rows, cols, selectedColors) {
-      gridContainer.innerHTML = "";  // Clear previous grid
-      gridContainer.style.gridTemplateRows = `repeat(${rows}, 120px)`;
-      gridContainer.style.gridTemplateColumns = `repeat(${cols}, 120px)`;
+  const colorArrangement = [
+    "random",
+    "alternate-columns",
+    "alternate-rows",
+    "diagonal",
+    "zigzag",
+    "radial",
+    "diamond",
+  ];
+  const dropdownList = document.querySelector(".dropdown-list");
+  //   const dropdownOptions = document.querySelectorAll(".color-op");
 
-      for (let i = 0; i < rows * cols; i++) {
-          const cell = document.createElement("div");
-          cell.style.cssText = "width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; cursor: pointer;";
-          const colorKeys = selectedColors.length > 0 ? selectedColors : Object.keys(svgImagesByColor);
-          const randomColor = colorKeys[Math.floor(Math.random() * colorKeys.length)];
-          const svgArray = svgImagesByColor[randomColor];
-          const randomIndex = Math.floor(Math.random() * svgArray.length);
-          const svgUrl = svgArray[randomIndex];
+  let selectedArrangement = "radial";
+  //   // Clear existing options
 
-          fetch(svgUrl)
-              .then(response => response.text())
-              .then(svgData => {
-                  const svgWrapper = document.createElement("div");
-                  svgWrapper.innerHTML = svgData;
-                  svgWrapper.querySelector("svg").setAttribute("height", "100%");
-                  svgWrapper.querySelector("svg").setAttribute("width", "100%");
-                  svgWrapper.querySelector("svg").setAttribute("preserveAspectRatio", "none");
-                  cell.appendChild(svgWrapper);
-                  cell.addEventListener('click', function () {
-                      regenerateCell(cell, randomColor);
-                  });
-              });
-          gridContainer.appendChild(cell);
-      }
-  }
+  colorArrangement.forEach((arrangement) => {
+    const dropdownLink = document.createElement("a");
+    dropdownLink.href = "#";
+    dropdownLink.classList.add("color-op", "w-dropdown-link");
+    dropdownLink.textContent =
+      arrangement.charAt(0).toUpperCase() + arrangement.slice(1); // Capitalize the first letter
+    dropdownLink.dataset.arrangement = arrangement; // Store the arrangement name in a data attribute
+    dropdownList.appendChild(dropdownLink);
 
-  function regenerateCell(cell, color) {
-      const svgArray = svgImagesByColor[color];
+    // Add click event listener to each option
+    dropdownLink.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the default action
+      selectedArrangement = event.target.getAttribute("data-arrangement");
+      updateGrid();
+    });
+  });
+
+  function generateGrid(rows, cols, selectedColors, arrangement) {
+    gridContainer.innerHTML = ""; // Clear previous grid
+    gridContainer.style.gridTemplateRows = `repeat(${rows}, 120px)`;
+    gridContainer.style.gridTemplateColumns = `repeat(${cols}, 120px)`;
+
+    for (let i = 0; i < rows * cols; i++) {
+      const cell = document.createElement("div");
+      cell.style.cssText =
+        "width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; cursor: pointer;";
+
+      const colorKeys =
+        selectedColors.length > 0
+          ? selectedColors
+          : Object.keys(svgImagesByColor);
+
+      const randomColor = getColorByArrangement(
+        arrangement,
+        i,
+        rows,
+        cols,
+        colorKeys
+      );
+
+      const svgArray = svgImagesByColor[randomColor];
       const randomIndex = Math.floor(Math.random() * svgArray.length);
       const svgUrl = svgArray[randomIndex];
 
       fetch(svgUrl)
-          .then(response => response.text())
-          .then(svgData => {
-              cell.innerHTML = '';
-              const svgWrapper = document.createElement("div");
-              svgWrapper.innerHTML = svgData;
-              svgWrapper.querySelector("svg").setAttribute("height", "100%");
-              svgWrapper.querySelector("svg").setAttribute("width", "100%");
-              svgWrapper.querySelector("svg").setAttribute("preserveAspectRatio", "none");
-              cell.appendChild(svgWrapper);
+        .then((response) => response.text())
+        .then((svgData) => {
+          const svgWrapper = document.createElement("div");
+          svgWrapper.innerHTML = svgData;
+          svgWrapper.querySelector("svg").setAttribute("height", "100%");
+          svgWrapper.querySelector("svg").setAttribute("width", "100%");
+          svgWrapper
+            .querySelector("svg")
+            .setAttribute("preserveAspectRatio", "none");
+          cell.appendChild(svgWrapper);
+          cell.addEventListener("click", function () {
+            regenerateCell(cell, randomColor);
           });
+          // Add right-click event listener
+          cell.addEventListener("contextmenu", function (event) {
+            event.preventDefault(); // Prevent the context menu from appearing
+            cell.style.backgroundColor = "transparent"; // Change the cell's background color to white
+            cell.innerHTML = ""; // Remove the cell's content
+          });
+        });
+      gridContainer.appendChild(cell);
+    }
+  }
+
+  function regenerateCell(cell, color) {
+    const svgArray = svgImagesByColor[color];
+    const randomIndex = Math.floor(Math.random() * svgArray.length);
+    const svgUrl = svgArray[randomIndex];
+
+    fetch(svgUrl)
+      .then((response) => response.text())
+      .then((svgData) => {
+        cell.innerHTML = "";
+        const svgWrapper = document.createElement("div");
+        svgWrapper.innerHTML = svgData;
+        svgWrapper.querySelector("svg").setAttribute("height", "100%");
+        svgWrapper.querySelector("svg").setAttribute("width", "100%");
+        svgWrapper
+          .querySelector("svg")
+          .setAttribute("preserveAspectRatio", "none");
+        cell.appendChild(svgWrapper);
+      });
   }
 
   function updateGrid() {
-      const rows = parseInt(rowInput.value) || 3;
-      const cols = parseInt(colInput.value) || 3;
-      const selectedColors = Array.from(document.querySelectorAll('.color.active')).map(el => el.id);
-      generateGrid(rows, cols, selectedColors);
+    const rows = parseInt(rowInput.value) || 3;
+    const cols = parseInt(colInput.value) || 3;
+    const selectedColors = Array.from(
+      document.querySelectorAll(".color.active")
+    ).map((el) => el.id);
+
+    // console.log("color mode called : " + arrangement);
+    // Check if the dropdown element exists
+    const dropdownElement = document.querySelector("#w-dropdown-toggle-0 div");
+    console.log("color mode called : " + selectedArrangement);
+
+    generateGrid(rows, cols, selectedColors, selectedArrangement);
   }
 
   function handleColorSelection(event) {
-      event.currentTarget.classList.toggle('active');
-      updateGrid();
+    event.currentTarget.classList.toggle("active");
+
+    // Find the child element with the class "color-active"
+    const colorActiveElement =
+      event.currentTarget.querySelector(".color-active");
+
+    // Toggle the visibility of the "color-active" child element based on the "active" class
+    if (event.currentTarget.classList.contains("active")) {
+      colorActiveElement.style.display = "block"; // Show the child element
+    } else {
+      colorActiveElement.style.display = "none"; // Hide the child element
+    }
+    updateGrid();
   }
 
-  colorElements.forEach(color => {
-      color.addEventListener('click', handleColorSelection);
+  colorElements.forEach((color) => {
+    color.addEventListener("click", handleColorSelection);
   });
 
   rowInput.addEventListener("input", updateGrid);
@@ -174,20 +247,151 @@ document.addEventListener("DOMContentLoaded", function () {
 
   rowInput.value = 3;
   colInput.value = 3;
+  //   rowInput.addEventListener("input", updateGrid);
+  //   colInput.addEventListener("input", updateGrid);
+
   updateGrid(); // Generate initial 3x3 grid
 
   function downloadGridAsImage() {
-      html2canvas(gridContainer).then(canvas => {
-          const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-          let link = document.createElement('a');
-          link.download = 'grid-image.png';
-          link.href = image;
-          link.click();
-          link.remove();
-      }).catch(err => {
-          console.error('Could not generate image', err);
+    html2canvas(gridContainer, { backgroundColor: null })
+      .then((canvas) => {
+        const image = canvas
+          .toDataURL("image/png")
+          .replace("image/png", "image/octet-stream");
+        let link = document.createElement("a");
+        link.download = "grid-image.png";
+        link.href = image;
+        link.click();
+        link.remove();
+      })
+      .catch((err) => {
+        console.error("Could not generate image", err);
       });
   }
 
-  document.querySelector('.pg-download').addEventListener('click', downloadGridAsImage);
+  document
+    .querySelector(".download-icon")
+    .addEventListener("click", downloadGridAsImage);
+});
+
+//----------COLOR ARRANGEMENTs------------------------
+
+function getRandomColor(colorKeys) {
+  return colorKeys[Math.floor(Math.random() * colorKeys.length)];
+}
+
+function getAlternateColumnColor(i, cols, colorKeys) {
+  const currentCol = i % cols;
+  return colorKeys[currentCol % colorKeys.length];
+}
+
+function getAlternateRowColor(i, cols, colorKeys) {
+  const currentRow = Math.floor(i / cols);
+  return colorKeys[currentRow % colorKeys.length];
+}
+function getDiagonalColor(i, cols, colorKeys) {
+  const currentDiagonal = Math.floor(i / cols) + (i % cols);
+  return colorKeys[currentDiagonal % colorKeys.length];
+}
+function getZigZagColor(i, cols, colorKeys) {
+  const currentRow = Math.floor(i / cols);
+  const currentCol = i % cols;
+  const zigZagIndex = currentRow % 2 === 0 ? currentCol : cols - currentCol - 1;
+  return colorKeys[zigZagIndex % colorKeys.length];
+}
+function getRadialColor(i, rows, cols, colorKeys) {
+  const centerX = Math.floor(cols / 2);
+  const centerY = Math.floor(rows / 2);
+
+  const x = i % cols;
+  const y = Math.floor(i / cols);
+
+  const dx = Math.abs(x - centerX);
+  const dy = Math.abs(y - centerY);
+
+  const distance = Math.sqrt(dx * dx + dy * dy);
+  const maxDistance = Math.sqrt(centerX * centerX + centerY * centerY);
+
+  const colorIndex = Math.floor(
+    (distance / maxDistance) * (colorKeys.length - 1)
+  );
+  return colorKeys[colorIndex];
+}
+function getDiamondColor(i, rows, cols, colorKeys) {
+  const centerX = Math.floor(cols / 2);
+  const centerY = Math.floor(rows / 2);
+
+  const x = i % cols;
+  const y = Math.floor(i / cols);
+
+  const dx = Math.abs(x - centerX);
+  const dy = Math.abs(y - centerY);
+
+  // Use the Chebyshev distance to create a diamond effect
+  const distance = Math.max(dx, dy);
+  const maxDistance = Math.max(centerX, centerY);
+
+  const colorIndex = Math.floor(
+    (distance / maxDistance) * (colorKeys.length - 1)
+  );
+  return colorKeys[colorIndex];
+}
+
+function getColorByArrangement(arrangement, i, rows, cols, colorKeys) {
+  switch (arrangement) {
+    case "random":
+      return getRandomColor(colorKeys);
+    case "alternate-columns":
+      return getAlternateColumnColor(i, cols, colorKeys);
+    case "alternate-rows":
+      return getAlternateRowColor(i, cols, colorKeys);
+    case "diagonal":
+      return getDiagonalColor(i, cols, colorKeys);
+    case "zigzag":
+      return getZigZagColor(i, cols, colorKeys);
+    case "radial":
+      return getRadialColor(i, rows, cols, colorKeys);
+    case "diamond":
+      return getDiamondColor(i, rows, cols, colorKeys);
+    default:
+      return getRandomColor(colorKeys);
+  }
+}
+
+// ------------for row/col button ----------------------
+
+function incrementValue(e) {
+  e.preventDefault();
+  var fieldName = $(e.target).data("field");
+  var input = document.querySelector("input[name=" + fieldName + "]");
+  var currentVal = parseInt(input.value, 10);
+
+  if (!isNaN(currentVal)) {
+    input.value = currentVal + 1;
+    input.dispatchEvent(new Event("input")); // Trigger input event to update the grid
+  } else {
+    input.value = 0;
+  }
+}
+
+function decrementValue(e) {
+  e.preventDefault();
+  var fieldName = $(e.target).data("field");
+  var input = document.querySelector("input[name=" + fieldName + "]");
+  var currentVal = parseInt(input.value, 10);
+
+  if (!isNaN(currentVal) && currentVal > 0) {
+    input.value = currentVal - 1;
+    input.dispatchEvent(new Event("input")); // Trigger input event to update the grid
+  } else {
+    input.value = 0;
+  }
+}
+
+$(".input-group").on("click", ".button-plus", function (e) {
+  incrementValue(e);
+});
+
+$(".input-group").on("click", ".button-minus", function (e) {
+  decrementValue(e);
 });
