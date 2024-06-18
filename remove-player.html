@@ -4,16 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vimeo Embed Code Modifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .output-container {
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background-color: #008CBA;
+        }
+        .copy-btn:hover {
+            background-color: #007bb5;
+        }
+    </style>
 </head>
 <body>
     <h1>Vimeo Embed Code Modifier</h1>
     <p>Enter your Vimeo embed code below:</p>
-    <textarea id="inputCode" rows="5" cols="80"></textarea><br><br>
-    <button onclick="modifyEmbedCode()">Modify Embed Code</button>
+    <textarea id="inputCode" rows="5" placeholder="Paste your Vimeo embed code here..."></textarea>
     <h2>Modified Embed Code:</h2>
-    <textarea id="outputCode" rows="5" cols="80" readonly></textarea>
+    <div class="output-container">
+        <textarea id="outputCode" rows="5" readonly></textarea>
+        <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+    </div>
 
     <script>
+        document.getElementById('inputCode').addEventListener('input', modifyEmbedCode);
+
         function modifyEmbedCode() {
             const inputCode = document.getElementById('inputCode').value;
             const regex = /<iframe.*?src="(.*?)".*?><\/iframe>/;
@@ -33,6 +76,14 @@
             } else {
                 document.getElementById('outputCode').value = 'Invalid embed code.';
             }
+        }
+
+        function copyCode() {
+            const outputCode = document.getElementById('outputCode');
+            outputCode.select();
+            outputCode.setSelectionRange(0, 99999); // For mobile devices
+            document.execCommand('copy');
+            alert('Copied to clipboard');
         }
     </script>
 </body>
