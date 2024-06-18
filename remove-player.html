@@ -34,9 +34,6 @@
             position: relative;
         }
         .copy-btn {
-            position: absolute;
-            right: 10px;
-            top: 10px;
             background-color: #008CBA;
         }
         .copy-btn:hover {
@@ -44,7 +41,7 @@
         }
     </style>
 </head>
-<body>
+<body style="max-width: 430px;">
     <h1>Vimeo Embed Code Modifier</h1>
     <p>Enter your Vimeo embed code below:</p>
     <textarea id="inputCode" rows="5" placeholder="Paste your Vimeo embed code here..."></textarea>
@@ -64,14 +61,13 @@
 
             if (match && match[1]) {
                 let srcUrl = match[1];
-                const params = new URLSearchParams(srcUrl.split('?')[1]);
-                params.set('background', '1');
-                params.set('autoplay', '1');
-                params.set('loop', '1');
-                params.set('muted', '1');
-                srcUrl = srcUrl.split('?')[0] + '?' + params.toString();
+                const url = new URL(srcUrl);
+                url.searchParams.set('background', '1');
+                url.searchParams.set('autoplay', '1');
+                url.searchParams.set('loop', '1');
+                url.searchParams.set('muted', '1');
 
-                const outputCode = `<iframe src="${srcUrl}" width="640" height="360" frameborder="0" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms"></iframe>`;
+                const outputCode = `<iframe src="${url.toString()}" width="640" height="360" frameborder="0" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms"></iframe>`;
                 document.getElementById('outputCode').value = outputCode;
             } else {
                 document.getElementById('outputCode').value = 'Invalid embed code.';
