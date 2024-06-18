@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimeo Embed Code Modifier</title>
+</head>
+<body>
+    <h1>Vimeo Embed Code Modifier</h1>
+    <p>Enter your Vimeo embed code below:</p>
+    <textarea id="inputCode" rows="5" cols="80"></textarea><br><br>
+    <button onclick="modifyEmbedCode()">Modify Embed Code</button>
+    <h2>Modified Embed Code:</h2>
+    <textarea id="outputCode" rows="5" cols="80" readonly></textarea>
+
+    <script>
+        function modifyEmbedCode() {
+            const inputCode = document.getElementById('inputCode').value;
+            const regex = /<iframe.*?src="(.*?)".*?><\/iframe>/;
+            const match = inputCode.match(regex);
+
+            if (match && match[1]) {
+                let srcUrl = match[1];
+                const params = new URLSearchParams(srcUrl.split('?')[1]);
+                params.set('background', '1');
+                params.set('autoplay', '1');
+                params.set('loop', '1');
+                params.set('muted', '1');
+                srcUrl = srcUrl.split('?')[0] + '?' + params.toString();
+
+                const outputCode = `<iframe src="${srcUrl}" width="640" height="360" frameborder="0" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms"></iframe>`;
+                document.getElementById('outputCode').value = outputCode;
+            } else {
+                document.getElementById('outputCode').value = 'Invalid embed code.';
+            }
+        }
+    </script>
+</body>
+</html>
